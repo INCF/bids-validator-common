@@ -1,0 +1,1 @@
+"""BIDS validator common Python package."""
