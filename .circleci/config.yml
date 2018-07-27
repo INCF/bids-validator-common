@@ -7,6 +7,7 @@ defaults: &defaults
 
 jobs:
   build-javascript:
+    <<: *defaults
     steps:
       - checkout
       - run:
@@ -16,6 +17,7 @@ jobs:
           name: Build library
           command: yarn build
   publish-npm:
+    <<: *defaults
     steps:
       - attach_workspace:
           at: ~/repo
