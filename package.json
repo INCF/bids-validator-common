@@ -11,5 +11,8 @@
     "prettier": "^1.13.7",
     "webpack": "^4.16.3",
     "webpack-command": "^0.4.1"
+  },
+  "scripts": {
+    "build": "webpack --output-library --output-path lib"
   }
 }
