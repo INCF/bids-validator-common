@@ -15,7 +15,8 @@
     "rollup-plugin-node-resolve": "^3.3.0"
   },
   "scripts": {
-    "build": "rollup -c"
+    "build": "rollup -c",
+    "prepublish": "$npm_execpath run build"
   },
   "main": "lib/bids-validator-common.cjs.js",
   "module": "lib/bids-validator-common.esm.js",
