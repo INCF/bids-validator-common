@@ -35,7 +35,10 @@ workflows:
   version: 2
   publish:
     jobs:
-      - build-javascript
+      - build-javascript:
+          filters:
+            tags:
+              only: /.*/
       - publish-npm:
           requires:
             - build-javascript
