@@ -1,0 +1,10 @@
+{
+  "name": "bids-validator-common",
+  "version": "0.1.0",
+  "description": "Language agnostic BIDS validator rules and content.",
+  "main": "index.js",
+  "repository": "git@github.com:INCF/bids-validator-common.git",
+  "author": "Nell Hardcastle <nell@squishymedia.com>",
+  "license": "MIT",
+  "private": false
+}
