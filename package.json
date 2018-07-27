@@ -1,0 +1,26 @@
+{
+  "name": "bids-validator-common",
+  "version": "0.1.0",
+  "description": "Language agnostic BIDS validator rules and content.",
+  "main": "lib/bids-validator-common.cjs.js",
+  "repository": "git@github.com:INCF/bids-validator-common.git",
+  "author": "Nell Hardcastle <nell@squishymedia.com>",
+  "license": "MIT",
+  "private": false,
+  "devDependencies": {
+    "prettier": "^1.13.7",
+    "rollup": "^0.63.4",
+    "rollup-plugin-commonjs": "^9.1.4",
+    "rollup-plugin-json": "^3.0.0",
+    "rollup-plugin-node-resolve": "^3.3.0"
+  },
+  "scripts": {
+    "build": "rollup -c",
+    "prepublish": "$npm_execpath run build"
+  },
+  "module": "lib/bids-validator-common.esm.js",
+  "browser": "lib/bids-validator-common.umd.js",
+  "files": [
+    "lib"
+  ]
+}

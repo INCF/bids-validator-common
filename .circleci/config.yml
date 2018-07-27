@@ -1,0 +1,46 @@
+version: 2
+
+defaults: &defaults
+  working_directory: ~/repo
+  docker:
+    - image: circleci/node:8.11.3
+
+jobs:
+  build-javascript:
+    <<: *defaults
+    steps:
+      - checkout
+      - run:
+          name: Install node deps
+          command: yarn
+      - run:
+          name: Build library
+          command: yarn build
+  publish-npm:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: ~/repo
+      - run:
+          name: Authenticate with registry
+          command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/repo/.npmrc
+      - run:
+          name: Sync version with git tag
+          command: npm version from-git
+      - run:
+          name: Publish to NPM
+          command: npm publish
+
+workflows:
+  version: 2
+  publish:
+    jobs:
+      - build-javascript
+      - publish-npm:
+          requires:
+            - build-javascript
+          filters:
+            tags:
+              only: /^v.*/
+            branches:
+              ignore: /.*/
