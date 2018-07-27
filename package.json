@@ -9,10 +9,18 @@
   "private": false,
   "devDependencies": {
     "prettier": "^1.13.7",
-    "webpack": "^4.16.3",
-    "webpack-command": "^0.4.1"
+    "rollup": "^0.63.4",
+    "rollup-plugin-commonjs": "^9.1.4",
+    "rollup-plugin-json": "^3.0.0",
+    "rollup-plugin-node-resolve": "^3.3.0"
   },
   "scripts": {
-    "build": "webpack --output-library --output-path lib"
-  }
+    "build": "rollup -c"
+  },
+  "main": "lib/bids-validator-common.cjs.js",
+  "module": "lib/bids-validator-common.esm.js",
+  "browser": "lib/bids-validator-common.umd.js",
+  "files": [
+    "lib"
+  ]
 }
