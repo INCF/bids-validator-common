@@ -28,6 +28,9 @@ jobs:
           name: Authenticate with registry
           command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/repo/.npmrc
       - run:
+          name: Convert to a full clone for tag history
+          command: git fetch --unshallow
+      - run:
           name: Sync version with git tag
           command: npm version from-git
       - run:
