@@ -16,6 +16,9 @@ jobs:
       - run:
           name: Build library
           command: yarn build
+      - persist_to_workspace:
+          root: ~/repo
+          paths: .
   publish-npm:
     <<: *defaults
     steps:
