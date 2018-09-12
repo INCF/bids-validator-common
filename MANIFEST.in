@@ -1,0 +1,2 @@
+include versioneer.py
+include bids_validator_common/_version.py

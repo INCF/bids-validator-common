@@ -1,8 +1,8 @@
+"""Validation class for BIDS projects."""
+
 import re
 import os
 import json
-
-__all__ = ['BIDSValidator']
 
 
 class BIDSValidator():
@@ -60,7 +60,7 @@ class BIDSValidator():
         conditions = []
 
         conditions.append(self.is_top_level(path))
-        conditions.append(self.is_associated_data(path) )
+        conditions.append(self.is_associated_data(path))
         conditions.append(self.is_session_level(path))
         conditions.append(self.is_subject_level(path))
         conditions.append(self.is_phenotypic(path))
